@@ -66,6 +66,7 @@
     mode: 0755
     recurse: yes
   with_items:
+    - /mnt/zen/backup
     - /mnt/zen/config
     - /mnt/zen/data
     - /mnt/zen/zcash-params
