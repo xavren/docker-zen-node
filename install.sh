@@ -123,8 +123,8 @@ echo -n '127.0.0.1' > /mnt/zen/secnode/rpcbind
 echo -n '18231' > /mnt/zen/secnode/rpcport
 echo -n 'user' > /mnt/zen/secnode/rpcuser
 echo -n $rpcpassword > /mnt/zen/secnode/rpcpassword
-echo -n 'ts1.eu,ts1.na,ts1.sea' > /mnt/zen/secnode/servers
-echo -n "ts1.$region" > /mnt/zen/secnode/home
+echo -n 'ts2.eu,ts1.eu,ts2.na,ts1.na' > /mnt/zen/secnode/servers
+echo -n "ts2.$region" > /mnt/zen/secnode/home
 echo -n $region > /mnt/zen/secnode/region
 echo -n 'http://devtracksys.secnodes.com' > /mnt/zen/secnode/serverurl
 echo -n $stakeaddr > /mnt/zen/secnode/stakeaddr
@@ -143,8 +143,8 @@ Restart=always
 ExecStartPre=-/usr/bin/docker stop zen-node
 ExecStartPre=-/usr/bin/docker rm  zen-node
 # Always pull the latest docker image
-ExecStartPre=/usr/bin/docker pull whenlambomoon/zend:latest
-ExecStart=/usr/bin/docker run --rm --net=host -p 9033:9033 -p 18231:18231 -v /mnt/zen:/mnt/zen --name zen-node whenlambomoon/zend:latest
+ExecStartPre=/usr/bin/docker pull xavren/zen:latest
+ExecStart=/usr/bin/docker run --rm --net=host -p 9033:9033 -p 127.0.0.1:18231:18231 -v /mnt/zen:/mnt/zen --name zen-node xavren/zen:latest
 [Install]
 WantedBy=multi-user.target
 EOF
@@ -162,9 +162,9 @@ Restart=always
 ExecStartPre=-/usr/bin/docker stop zen-secnodetracker
 ExecStartPre=-/usr/bin/docker rm  zen-secnodetracker
 # Always pull the latest docker image
-ExecStartPre=/usr/bin/docker pull whenlambomoon/secnodetracker:latest
-#ExecStart=/usr/bin/docker run --init --rm --net=host -v /mnt/zen:/mnt/zen --name zen-secnodetracker whenlambomoon/secnodetracker:latest
-ExecStart=/usr/bin/docker run --rm --net=host -v /mnt/zen:/mnt/zen --name zen-secnodetracker whenlambomoon/secnodetracker:latest
+ExecStartPre=/usr/bin/docker pull xavren/zen-node-tracker:latest
+#ExecStart=/usr/bin/docker run --init --rm --net=host -v /mnt/zen:/mnt/zen --name zen-secnodetracker xavren/zen-node-tracker:latest
+ExecStart=/usr/bin/docker run --rm --net=host -v /mnt/zen:/mnt/zen --name zen-secnodetracker xavren/zen-node-tracker:latest
 [Install]
 WantedBy=multi-user.target
 EOF

@@ -148,8 +148,8 @@
     - { value: '18231', path: '/mnt/zen/secnode/rpcport'}
     - { value: 'user', path: '/mnt/zen/secnode/rpcuser'}
     - { value: '{{ rpcpassword.stdout }}', path: '/mnt/zen/secnode/rpcpassword'}
-    - { value: 'ts1.eu,ts1.na,ts1.sea', path: '/mnt/zen/secnode/servers'}
-    - { value: 'ts1.{{ region }}', path: '/mnt/zen/secnode/home'}
+    - { value: 'ts2.eu,ts1.eu,ts2.na,ts1.na', path: '/mnt/zen/secnode/servers'}
+    - { value: 'ts2.{{ region }}', path: '/mnt/zen/secnode/home'}
     - { value: '{{ region }}', path: '/mnt/zen/secnode/region' }
     - { value: 'http://devtracksys.secnodes.com', path: '/mnt/zen/secnode/serverurl'}
     - { value: '{{ stakeaddr }}', path: '/mnt/zen/secnode/stakeaddr'}
