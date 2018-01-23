@@ -156,6 +156,6 @@ systemctl restart zen-node
 
 Donations are appreciated:
 
-**ETH** 0xb08c615eb6e0269dc27ece4a581f87d2f5b7188d
+**ETH** 0x7905fD9cB226305fc805d1E13ff9E784e1dEf9F4
 
-**ZEN** znoYaPU2G7MzUA69cMSYzmqMG4rkw3Mx7ae
+**ZEN** zngmrvJRWx9mqHgyY6e17dbkTYvbJwSRp83

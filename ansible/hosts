@@ -1,9 +1,9 @@
 # Parameters passed to all hosts
 [all:vars]
-email=test@example.com
-region=sea
+email=renaudin.xavier@gmail.com
+region=eu
 
 [zen-nodes]
-localhost fqdn=node.example.com stakeaddr=test
+zen2 fqdn=zen2.pzy.fr stakeaddr=znWhKFjdftF7sdiYJdZS2YB6D2Z5oXMUDsH
 
 [bootstrap-nodes]
