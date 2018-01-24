@@ -164,13 +164,13 @@
 - name: Enabling and starting zen-node container services...
   service:
     name: zen-node
-    state: started
+    state: stopped
     enabled: yes
 
 - name: Enabling and starting zen-secnodetracker container services...
   service:
     name: zen-secnodetracker
-    state: started
+    state: stopped
     enabled: yes
 
 - name: Configure ufw defaults
